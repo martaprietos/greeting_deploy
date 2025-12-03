@@ -1,0 +1,24 @@
+services:
+  greeting-service:
+    image: ghcr.io/martaprietos/lab7cicdopenfeign/app:latest
+    env_file: ./.env
+    ports:
+      - "8081:8081"
+    networks:
+      - labnet
+
+proxy-service:
+  image: ghcr.io/martaprietos/lab7cicdopenfeign/app:latest
+  env_file: ./.env
+  depends_on:
+    - lab7cicdopenfeign
+  ports:
+    - "8080:8080"
+  networks:
+    labnet
+
+networks:
+  labnet:
+
+
+
