@@ -11,7 +11,7 @@ proxy-service:
   image: ghcr.io/martaprietos/lab7cicdproxyservice/app:latest
   env_file: ./.env
   depends_on:
-    - lab7cicdopenfeign
+    - greeting-service
   ports:
     - "8080:8080"
   networks:
