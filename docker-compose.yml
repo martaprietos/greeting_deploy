@@ -8,17 +8,14 @@ services:
       - labnet
 
 proxy-service:
-  image: ghcr.io/martaprietos/lab7cicdproxyservice/app::latest
+  image: ghcr.io/martaprietos/lab7cicdproxyservice/app:latest
   env_file: ./.env
   depends_on:
     - lab7cicdopenfeign
   ports:
     - "8080:8080"
   networks:
-    labnet
+    - labnet
 
 networks:
   labnet:
-
-
-
