@@ -7,15 +7,15 @@ services:
     networks:
       - labnet
 
-proxy-service:
-  image: ghcr.io/martaprietos/lab7cicdproxyservice/app:latest
-  env_file: ./.env
-  depends_on:
-    - greeting-service
-  ports:
-    - "8080:8080"
+  proxy-service:
+    image: ghcr.io/martaprietos/lab7cicdproxyservice/app:latest
+    env_file: ./.env
+    depends_on:
+      - greeting-service
+    ports:
+      - "8080:8080"
+    networks:
+      - labnet
+  
   networks:
-    - labnet
-
-networks:
-  labnet:
+    labnet:
